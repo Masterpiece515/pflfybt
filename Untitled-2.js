@@ -55,7 +55,7 @@ if (forName !== null) {
 const userAge = prompt("Сколько вам лет?");
 let formattedAge = userAge;
 
-if(formattedAge !== null) {
+if (formattedAge !== null) {
   formattedAge = formattedAge.trim();
   formattedAge = parseInt(formattedAge, 10);
 
@@ -72,3 +72,29 @@ if (forName !== null && formattedAge !== null) {
 } else {
   alert("Вы отменили ввод возраста.");
 }
+
+//задание 5
+let userString = prompt("Введите текст для обрезки").trim();
+let startSlicelndex = parseInt(
+  prompt("Введите индекс, с которого нужно начать обрезку строки")
+);
+let endSlicelndex = parseInt(
+  prompt("Введите индекс, которым нужно закончить обрезку строки")
+);
+
+if (
+  isNaN(startSlicelndex) ||
+  isNaN(endSlicelndex) ||
+  startSlicelndex < 0 ||
+  endSlicelndex > userString.length ||
+  startSlicelndex > endSlicelndex
+) {
+  alert(
+    "Некорректные данные. Пожалуйста, введите целые числа, и начало обрезки должно быть меньше или равно концу обрезки, и не выходить за пределы длины строки."
+  );
+} else {
+  let slicedString = userString.slice(startSlicelndex, endSlicelndex);
+  alert("Результат: " + slicedString);
+}
+
+
